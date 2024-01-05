@@ -258,7 +258,7 @@ class FullMapState extends State<FullMap> {
     );
   }
 
-  static const _stylesAndLoaders = [
+  static List<StyleInfo> _stylesAndLoaders = [
     StyleInfo(
       name: "Vector",
       baseStyle: MapboxStyles.LIGHT,
@@ -356,7 +356,7 @@ class FullMapState extends State<FullMap> {
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     "Current source ${styleInfo.name}",
-                    textScaleFactor: 1.4,
+                    textScaler: TextScaler.linear(1.4),
                   ),
                 ),
               ),

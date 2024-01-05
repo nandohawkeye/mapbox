@@ -53,7 +53,7 @@ class LatLng {
   }
 
   @override
-  int get hashCode => hashValues(latitude, longitude);
+  int get hashCode => latitude.hashCode ^ longitude.hashCode;
 }
 
 /// A latitude/longitude aligned rectangle.
@@ -106,7 +106,7 @@ class LatLngBounds {
   }
 
   @override
-  int get hashCode => hashValues(southwest, northeast);
+  int get hashCode => southwest.hashCode ^ northeast.hashCode;
 }
 
 /// A geographical area representing a non-aligned quadrilateral
@@ -164,7 +164,11 @@ class LatLngQuad {
   }
 
   @override
-  int get hashCode => hashValues(topLeft, topRight, bottomRight, bottomLeft);
+  int get hashCode =>
+      topLeft.hashCode ^
+      topRight.hashCode ^
+      bottomRight.hashCode ^
+      bottomLeft.hashCode;
 }
 
 /// User's observed location

@@ -14,7 +14,9 @@ dependencies:
     git:
       url: https://github.com/tobrun/flutter-mapbox-gl.git
       path: mapbox_gl_web
-  collection: ^1.15.0
+  collection: ^1.18.0 
+  recase: ^4.1.0
+  mustache_template: ^2.0.0
 
 dependency_overrides:
   mapbox_gl_platform_interface:
@@ -34,6 +36,6 @@ flutter:
         default_package: mapbox_gl_web
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.15.0 <3.0.0'
   # Flutter versions prior to 1.10 did not support the flutter.plugin.platforms map.
   flutter: ">=2.0.0"

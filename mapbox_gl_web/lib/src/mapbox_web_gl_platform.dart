@@ -232,7 +232,7 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
 
   @override
   Future<void> matchMapLanguageWithDeviceDefault() async {
-    setMapLanguage(ui.window.locale.languageCode);
+    setMapLanguage(PlatformDispatcher.instance.locale.languageCode);
   }
 
   @override
@@ -1056,7 +1056,7 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
         snapshotOptions.heading != 0) {
       throw UnsupportedError("camera posision option is not supported");
     }
-    final base64String = await _map.getCanvas().toDataUrl('image/jpeg');
+    final base64String = _map.getCanvas().toDataUrl('image/jpeg');
     return base64String;
   }
 
